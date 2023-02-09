@@ -44,10 +44,23 @@ function App() {
         console.log('An error happened.');
       });
   }
-  console.log(user);
+
+  const handleRegister = (event) => {
+    event.preventDefault();
+    console.log(event.target.email.value);
+  }
 
   return (
-    <div>
+    <div className='App'>
+
+      <form onSubmit={handleRegister}>
+        <input type="email" name='email' id='email' placeholder='Your Email' />
+        <br />
+        <input type="password" name='password' id='password' placeholder='Your Password' />
+        <br />
+        <button type='submit'>Register</button>
+      </form>
+
       {
         user.uid ?
           <button onClick={handleSignOut}>Sign Out</button>
