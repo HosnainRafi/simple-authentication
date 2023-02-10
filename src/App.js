@@ -3,6 +3,7 @@ import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuth
 import app from './firebase/firebase.init';
 import { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import PasswordStrengthChecker from './passwordChecker';
 
 
 function App() {
@@ -106,6 +107,7 @@ function App() {
         <p>Email address: {user.email}</p>
         <img src={user.photoURL} alt="" />
       </div>}
+
 
     </div>
   );
